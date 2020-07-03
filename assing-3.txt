@@ -1,0 +1,24 @@
+------------------------------------------Assignment-3-create constraints at table level--multiple primary key---------------
+create table employee
+(
+        EmployeeID number CONSTRAINT EMPID primary key,
+        EmployeeName varchar2(10) NOT NULL ,
+        EmployeeAddress varchar2(20) CONSTRAINT EMPADD check ( EmployeeAddress <>ALL( 'newyork', 'london', 'paris') ),
+        salary number CONSTRAINT EMPSAL check( salary between 21000 and 31000),
+        companyaddress varchar2(20) default 'ASV Suntech Park'
+)
+insert into employee values(2,'harshi','vinukonda',23000,default)
+select * from employee
+
+create table SALARY
+(
+        EmployeeID number,
+        Employee_PF number ,
+        Employee_HRA number,
+        CONSTRAINT FK_PID FOREIGN KEY(EmployeeID) REFERENCES EMPLOYEE(EmployeeID),
+        CONSTRAINT EM_PF check  (Employee_PF > 0),
+        CONSTRAINT EM_HRA check  (Employee_HRA > 0)
+)
+insert into SALARY(EmployeeID,  Employee_PF, Employee_HRA) values(2,90,25000)
+
+select * from salary

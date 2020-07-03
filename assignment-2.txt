@@ -1,0 +1,20 @@
+------------------------Assignment-2-Creat a table using constraint at table level multiple primary key
+EmployeeID
+EmployeeName
+EmployeeAddress
+Salary
+
+                                       
+create table employee
+(
+        EmployeeID number CONSTRAINT PKEMPID primary key,
+        EmployeeName varchar2(10) ,
+        EmployeeAddress varchar2(20) CONSTRAINT CHKEMPADD check ( EmployeeAddress not in( 'newyork', 'london', 'paris') ),
+        salary number CONSTRAINT CHKEMPSAL check( salary between 21000 and 31000),
+        companyaddress varchar2(20) default 'ASV Suntech Park'
+)
+
+insert into employee values(150,'harshi', 'kurnool',24000, default);
+
+select * from employee;
+ 

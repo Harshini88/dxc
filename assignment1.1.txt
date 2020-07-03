@@ -1,0 +1,24 @@
+-----------------------------Assignment-1-Creat a table called employee with below columns and perform the following operations
+EmployeeID
+EmployeeName
+EmployeeAddress
+DOJ
+DOB
+Salary
+
+                                              
+create table employee_details
+(
+        Employee_ID number,
+        Employee_Name varchar2(10) ,
+        Employee_Address varchar2(20),
+        DOB varchar(10),
+        DOJ varchar(20),
+        salary number
+)
+insert into employee_details(Employee_ID, Employee_Name, Employee_Address, DOB, DOJ, salary) values (90,'harshu','vinukonda','08/08/1998','03/07/2020',26000)
+insert into employee_details(Employee_ID, Employee_Name, Employee_Address, DOB, DOJ, salary) values (91,'harshi','guntur','09/09/1997','03/07/2020',26000)
+
+
+select * from employee_details
+
