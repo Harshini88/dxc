@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int totalretail=0;
+		
+		
+	System.out.println("Enter productid :");
+		int productid=sc.nextInt();
+		
+		System.out.println("Enter purchase:");
+		int purchase =sc.nextInt();
+		switch(productid){
+		case 1:
+		totalretail+=22.50*purchase;
+		break;
+		case 2:
+		totalretail+=44.50*purchase;
+		break;
+		case 3:
+			totalretail+=9.98*purchase;
+			break;
+			default :
+				System.out.println("Invalid");
+				
+		}
+		System.out.println("Your total bill is "+totalretail);
+		
+		
+	}
+}
