@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function myfun(){
+	var uname=document.forms[0].elements[0].value;
+	var errUserName=document.getElementById("errUserName")
+	var errGender=document.getElementById("errGender")
+	var errComments=document.getElementById("errComments")
+if(uname.length==0)
+{
+	errUserName.innerHTML="Name should not be empty";
+	}
+else if(uname.length!=0){
+	errUserName.innerHTML="Name :"+uname
+}
+	with(document.forms[0])
+	{
+		
+	if(gender[0].checked || gender[1].checked)
+	{
+		var gen=gender[0].checked?gender[0].value:gender[1].value
+				errGender.innerText="Your Gender is :"+gen
+		}
+	else
+		{
+		errGender.innerHTML="Please Select the Gender"
+		}
+	if(comments[0].checked || comments[1].checked)
+	{
+		var com=comments[0].checked?comments[0].value:comments[1].value
+				errComments.innerHTML="Your Comment is :"+com
+	}
+	else
+		{
+		errComments.innerHTML="Please Select the Comment"
+}
+}
+}
+
+</script>
+
+</head>
+<body>
+
+<h1> <font color="black" align="center"><center> User Form</center></font></h1>
+<form>
+<table border="4" cellspacing="4" cellpadding="8" align="center" bgcolor="pink">
+
+ 
+
+ <tr>
+<td>UserName :</td>
+<td> <input type="text" name ="UserName" id="UserName">
+</td>
+</tr>
+
+ <tr>
+<td>Spouse Name :</td>
+<td> <input type="text" name ="Spouse Name" id="Spouse Name">
+</td>
+</tr>
+
+<tr>
+<td>Gender :</td>
+<td> <input type="radio" name ="gender" id="male" value="male">Male <br>
+     <input type="radio" name ="gender" id="female" value="female">Female    
+</td>
+</tr>
+<br>
+<tr>
+<td>Comments:</td>
+<td>    <input type=radio name="comments" id="like" checked>Like <br>
+        <input type=radio name="comments" id="don't like" checked>Don't Like
+        </td>
+</tr>
+        <br>
+          
+     <td colspan="2" align="center""><input type ="button" id="submit" value="submit"  onclick="myfun()">
+     </td>
+</tr>
+<tr><td colspan="2"><span id=errUserName></span></div></td></tr>
+<tr><td colspan="2"><span id=errGender></span></div></td></tr>
+<tr><td colspan="2"><span id=errComments></span></div></td></tr>
+
+
+
+ </table>
+</form>
+</body>
+</html>
